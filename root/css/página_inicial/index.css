@@ -175,13 +175,6 @@ header .navbar a {
     padding-top: 2.5rem;
 }
 
-/*
-.about .row .gif {
-    flex: 1 1 40rem;
-    position: relative;
-}
-*/
-
 /* configuração da imagem */
 .about .content .gif img{
     width: 100%;
@@ -191,18 +184,6 @@ header .navbar a {
     height: 100%;
     object-fit: cover;
 }
-
-/* .about .row .gif h3{
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 3rem;
-    background: #fff;
-    width: 100%;
-    padding: 1rem 2rem;
-    text-align: center;
-    mix-blend-mode: screen;
-} */
 
 /* configuração geral do class text-about ; adequa conforme o espaço - faz com que o texto esteja ao lado imagem - nessa situação */
 .about .content .text-about {
@@ -226,29 +207,31 @@ header .navbar a {
     text-align: justify;
 }
 
-/* configuração do link */
-.about .content .text-about a {
-    text-align: center;
-    font-size: 12px;
-    color: #fff;
+.extra-text {
+    display: none;
+    transition: all 0.3s ease;
 }
 
-/* configuração da caixa que está o link */
-.about .content .text-about .link{
-    display: flex;
+.extra-text.active {
+    display: block;
+}
+
+.read-more-btn {
+    display: block;
+    margin-top: 10px;
     background: #810021;
-    padding: 10px;
-    border-radius: 15px;
-    width: auto;
-    max-width: 120px;
-    justify-content: center;  /* Centraliza o texto horizontalmente */
-    align-items: center;  /* Centraliza o texto verticalmente */
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
-/* animação para quando passar o mouse */
-.about .content .text-about .link:hover{
-    background: #000000bb;
+.read-more-btn:hover {
+    background-color: #000000bb;
 }
+
 
 /* div que configura a parte de INTEGRANTES */
 .box {
@@ -301,87 +284,92 @@ header .navbar a {
 }
 
 /* configuração do contêiner das imagens */
-.container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  height: 400px;
-  gap: 10px;
-  padding-top: 50px;
 
-  /* configuração para as divs dentro deste contêiner */
-  > div {
-    flex: 0 0 120px;
-    border-radius: 0.5rem;
-    transition: 0.5s ease-in-out;
-    cursor: pointer;
-    box-shadow: 1px 5px 15px #810021;
+.carousel-container {
+    width: 80%;
+    max-width: 900px;
+    margin: 50px auto;
     position: relative;
-    overflow: hidden;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    overflow: visible;
+}
 
-    /* configura as imagens dentro do contêiner em ordem ; cover - cobrir todo o espaço */
-    &:nth-of-type(1) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_yeri.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(2) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_joy.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(3) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_wendy.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(4) {
-      background: url(../../mídia/imagens/página_inicial/cosmic_seulgi.jpeg)
-        no-repeat 50% / cover;
-    }
-    &:nth-of-type(5) {
-        background: url(../../mídia/imagens/página_inicial/cosmic_irene.jpeg)
-          no-repeat 50% / cover;
-    }
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
 
-    /* configuração dos textos que estão sobre as imagens */
-    .content {
-      font-size: 1.5rem;
-      color: white;
-      text-shadow: 2px 2px 4px #000;
-      display: flex;
-      align-items: center;
-      padding: 25px;
-      opacity: 0;
-      flex-direction: column;
-      height: 100%;
-      justify-content: flex-end;
-      transform: translatey(100%);
-      transition: opacity 0.5s ease-in-out, transform 0.5s 0.2s;
-      visibility: hidden;
+.slide {
+    min-width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    display: none;
+}
 
-      span {
-        display: block;
-        margin-top: 5px;
-        font-size: 1.2rem;
-      }
-    }
+.slide.active {
+    display: flex;
+}
 
-    /* aplicação de animação */
-    &:hover {
-      flex: 0 0 250px;
-      box-shadow: 1px 3px 15px #000;
-      transform: translatey(-30px);
-    }
+.slide-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Alinha o texto à esquerda */
+  text-align: left; /* Garante alinhamento do conteúdo textual */
+}
 
-    &:hover .content {
-      opacity: 1;
-      transform: translatey(0%);
-      visibility: visible;
-    }
-  }
+
+.slide img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-right: 20px;
+}
+
+.slide-content h2 {
+    margin: 0;
+    font-size: 32px;
+    color: #333;
+}
+
+.slide-content span {
+    font-size: 18px;
+    color: #666;
+}
+
+.nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 28px;
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    cursor: pointer;
+    padding: 10px 15px;
+    border-radius: 50%;
+    transition: background 0.3s;
+    z-index: 1;
+}
+
+.nav:hover {
+    background: rgba(255, 255, 255, 1);
+}
+
+.nav.prev {
+    left: -60px;
+}
+
+.nav.next {
+    right: -60px;
 }
 
 /* configuração da section/id 'side' */
 .side {
-    padding-top: 150px;
+    padding-top: 80px;
 }
 
 /* configuração geral */
@@ -478,7 +466,7 @@ header .navbar a {
 }
 
 /* configuração das imagens */
-img {
+.concept img {
     width: 100%;
     z-index: -1;
     margin: auto;

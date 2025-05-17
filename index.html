@@ -31,16 +31,31 @@
     <!-- sobre o grupo ; gif - título - texto - link para a explicação detalhada -->
     <section class="about" id="about">
         <h1 class="heading">SOBRE</h1>
-
+    
         <div class="content">
             <div class="gif">
-                <img src="root/mídia/imagens/página_inicial/cosmic_gif.webp" loop autoplay></img>
+                <img src="root/mídia/imagens/página_inicial/cosmic_gif.webp" alt="GIF do grupo" loop autoplay>
             </div>
-
+    
             <div class="text-about">
                 <h3>Formação do grupo</h3>
-                <p>Red Velvet é um grupo feminino sul-coreano formado pela SM Entertainment, composto por 5 integrantes. Conhecidas por sua versatilidade musical, elas se destacam pela habilidade em transitar entre estilos doces e ousados, criando uma sonoridade única.</p>
-                <div class="link"><a href="https://redvelvet.fandom.com/wiki/Red_Velvet" class="more" target="_blank">LEIA MAIS</a></div>
+                <p>
+                    Red Velvet é um grupo feminino sul-coreano formado pela SM Entertainment, composto por 5 integrantes.
+                    Conhecidas por sua versatilidade musical, elas se destacam pela habilidade em transitar entre
+                    estilos doces e ousados, criando uma sonoridade única.
+                </p>
+    
+                <div class="extra-text">
+                    <p>
+                        O grupo debutou em 2014 com a música "Happiness" e rapidamente ganhou destaque com seu conceito
+                        duplo: o lado “Red”, mais vibrante e pop, e o lado “Velvet”, mais suave e maduro. As integrantes
+                        – Irene, Seulgi, Wendy, Joy e Yeri – se destacam não apenas como grupo, mas também em carreiras
+                        solo e sub-units. Ao longo dos anos, o Red Velvet acumulou inúmeros prêmios, turnês
+                        internacionais e um legado marcante no K-pop.
+                    </p>
+                </div>
+    
+                <button class="read-more-btn">LEIA MAIS</button>
             </div>
         </div>
     </section>
@@ -49,37 +64,50 @@
     <div class="box">
         <h1>INTEGRANTES</h1>
         <p>Inicialmente o grupo era composto por quatro membros. Mais tarde, em março de 2015, <span>Yeri</span> foi adicionada ao grupo durante a era <a href="https://youtu.be/T2E5PeoyXF0?si=Kns7Fm9KvfwhnDlu" target="_blank"><i>Ice Cream Cake</i></a>, consolidando a formação atual. Cada integrante tem um papel único, combinando vocais poderosos, performances marcantes e personalidades carismáticas, o que contribui para a identidade versátil do grupo.</p>
-        <div class="container">
-            <div>
-                <div class="content">
-                    <h2>Yeri</h2>
-                    <span>Vocalista & Rapper</span>
+    
+    
+        <div class="carousel-container">
+            <button class="nav prev" onclick="prevSlide()">❮</button>
+    
+            <div class="carousel">
+                <div class="slide active">
+                    <img src="root/mídia/imagens/página_inicial/cosmic_yeri.jpeg" alt="Yeri">
+                    <div class="slide-content">
+                        <h2>Yeri</h2>
+                        <span>Vocalista & Rapper</span>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="root/mídia/imagens/página_inicial/cosmic_joy.jpeg" alt="Joy">
+                    <div class="slide-content">
+                        <h2>Joy</h2>
+                        <span>Rapper Líder & Sub Vocalista</span>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="root/mídia/imagens/página_inicial/cosmic_wendy.jpeg" alt="Wendy">
+                    <div class="slide-content">
+                        <h2>Wendy</h2>
+                        <span>Vocalista Principal</span>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="root/mídia/imagens/página_inicial/cosmic_seulgi.jpeg" alt="Seulgi">
+                    <div class="slide-content">
+                        <h2>Seulgi</h2>
+                        <span>Vocalista & Dançarina Principal</span>
+                    </div>
+                </div>
+                <div class="slide">
+                    <img src="root/mídia/imagens/página_inicial/cosmic_irene.jpeg" alt="Irene">
+                    <div class="slide-content">
+                        <h2>Irene</h2>
+                        <span>Líder & Rapper Principal</span>
+                    </div>
                 </div>
             </div>
-            <div>
-                <div class="content">
-                    <h2>Joy</h2>
-                    <span>Rapper Líder & Sub Vocalista</span>
-                </div>
-            </div>
-            <div>
-                <div class="content">
-                    <h2>Wendy</h2>
-                    <span>Vocalisa Principal</span>
-                </div>
-            </div>
-            <div>
-                <div class="content">
-                    <h2>Seulgi</h2>
-                    <span>Vocalista & Dançarina Principal</span>
-                </div>
-            </div>
-            <div>
-                <div class="content">
-                    <h2>Irene</h2>
-                    <span>Líder & Rapper Principal</span>
-                </div>
-            </div>
+    
+            <button class="nav next" onclick="nextSlide()">❯</button>
         </div>
     </div>
 
@@ -123,5 +151,7 @@
         <p>&copy; 2025 <span>Anna Carolina Rodrigues Pacheco</span>. All Rights reserved</p>
         <a href="index.html"><img src="root/mídia/imagens/página_inicial/red_logo_shadow.png" alt="Logo Red Velvet"></a>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
