@@ -39,7 +39,11 @@
 /* definindo cor de fundo */
 body {
     background: #161616;
-    /*background: linear-gradient(to bottom, #161616, #3b1d79, #810021, #161616);*/
+    transition: background 0.3s ease;
+}
+
+body.light-mode {
+    background: #ffb6c13a; /* fundo branco gelo para modo claro */
 }
 
 /* configuração html */
@@ -114,6 +118,14 @@ header .navbar a {
     background: url(../../mídia/imagens/página_inicial/red_cosmic3.jpg) no-repeat;
     -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 60%, rgba(0, 0, 0, 0));
     mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 40%, rgba(0, 0, 0, 0));
+    background-size: cover;
+    background-position: center;
+}
+
+.home.light-mode {
+    background: url('../../mídia/imagens/página_inicial/red_feel1.jpg') no-repeat;
+    -webkit-mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0));
+    mask-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 70%, rgba(255, 255, 255, 0));
     background-size: cover;
     background-position: center;
 }
@@ -523,4 +535,63 @@ footer > p {
 footer > a > img {
     width: 45px;
     height: 45px;
+}
+
+.mode-selector {
+    position: absolute;
+    right: 3%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+    background-color: rgba(129, 0, 33, 0.8);
+    padding: 2px 6px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.mode-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 22px;
+    color: white;
+    transition: color 0.3s ease;
+    padding: 6px 8px;
+    border-radius: 5px;
+}
+
+.mode-btn.active {
+    color: #ffff;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+.mode-btn:hover {
+    color: #ffff;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.extra-text {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.extra-text.active {
+    display: block;
+}
+
+.read-more-btn {
+    display: block;
+    margin-top: 10px;
+    background: #810021;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background-color: #000000bb;
 }
