@@ -27,60 +27,83 @@ const body = document.body;
 const homeSection = document.querySelector(".home");
 
 function ativarModoClaro() {
-  body.classList.add("light-mode");
-  homeSection.classList.add("light-mode");
-  lightBtn.classList.add("active");
-  darkBtn.classList.remove("active");
-  atualizarImagens(true);
+    body.classList.add("light-mode");
+    homeSection.classList.add("light-mode");
+    lightBtn.classList.add("active");
+    darkBtn.classList.remove("active");
+    atualizarImagens(true);
+    localStorage.setItem("modo", "claro");
 }
 
 function ativarModoEscuro() {
-  body.classList.remove("light-mode");
-  homeSection.classList.remove("light-mode");
-  lightBtn.classList.remove("active");
-  darkBtn.classList.add("active");
-  atualizarImagens(false);
+    body.classList.remove("light-mode");
+    homeSection.classList.remove("light-mode");
+    lightBtn.classList.remove("active");
+    darkBtn.classList.add("active");
+    atualizarImagens(false);
+    localStorage.setItem("modo", "escuro");
 }
 
 function atualizarImagens(modoClaroAtivo) {
-  const imagensIntegrantes = {
-    "integrante-yeri": {
-      dark: "root/mídia/imagens/página_inicial/cosmic_yeri.jpeg",
-      light: "root/mídia/imagens/página_inicial/red_yeri.jpg"
-    },
-    "integrante-joy": {
-      dark: "root/mídia/imagens/página_inicial/cosmic_joy.jpeg",
-      light: "root/mídia/imagens/página_inicial/light_joy.jpeg"
-    },
-    "integrante-wendy": {
-      dark: "root/mídia/imagens/página_inicial/cosmic_wendy.jpeg",
-      light: "root/mídia/imagens/página_inicial/light_wendy.jpeg"
-    },
-    "integrante-seulgi": {
-      dark: "root/mídia/imagens/página_inicial/cosmic_seulgi.jpeg",
-      light: "root/mídia/imagens/página_inicial/light_seulgi.jpeg"
-    },
-    "integrante-irene": {
-      dark: "root/mídia/imagens/página_inicial/cosmic_irene.jpeg",
-      light: "root/mídia/imagens/página_inicial/light_irene.jpeg"
-    }
-  };
+    const imagensIntegrantes = {
+        "integrante-yeri": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_yeri.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_yeri.jpg"
+        },
+        "integrante-joy": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_joy.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_joy.jpeg"
+        },
+        "integrante-wendy": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_wendy.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_wendy.jpeg"
+        },
+        "integrante-seulgi": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_seulgi.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_seulgi.jpg"
+        },
+        "integrante-irene": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_irene.jpeg",
+            light: "root/mídia/imagens/página_inicial/feelr_irene.jpg"
+        },
+        "cover_feel_my_rhythm": {
+            dark: "root/mídia/imagens/página_inicial/cover-feel_my_rhythm.png",
+            light: "root/mídia/imagens/página_inicial/cover_feel.png"
+        },
+        "cover_peek_a_boo": {
+            dark: "root/mídia/imagens/página_inicial/cover-peek_a_boo.png",
+            light: "root/mídia/imagens/página_inicial/cover_red.png"
+        },
+        "gif_group": {
+            dark: "root/mídia/imagens/página_inicial/cosmic_gif.webp",
+            light: "root/mídia/imagens/página_inicial/feel_gif.gif"
+        }
+    };
 
-  for (let integrante in imagensIntegrantes) {
-    document.getElementById(integrante).src = modoClaroAtivo
-      ? imagensIntegrantes[integrante].light
-      : imagensIntegrantes[integrante].dark;
-  }
+    for (let integrante in imagensIntegrantes) {
+        const el = document.getElementById(integrante);
+        if (el) {
+            el.src = modoClaroAtivo
+                ? imagensIntegrantes[integrante].light
+                : imagensIntegrantes[integrante].dark;
+        }
+    }
 }
 
 // Eventos dos botões
 lightBtn.addEventListener("click", ativarModoClaro);
 darkBtn.addEventListener("click", ativarModoEscuro);
 
-// Estado inicial: modo escuro ativo
+// Ao carregar a página, aplica o modo salvo no localStorage
 document.addEventListener("DOMContentLoaded", () => {
-  ativarModoEscuro();
+    const modoSalvo = localStorage.getItem("modo");
+    if (modoSalvo === "claro") {
+        ativarModoClaro();
+    } else {
+        ativarModoEscuro();
+    }
 });
+
 
 
 document.addEventListener("DOMContentLoaded", function () {

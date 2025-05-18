@@ -42,10 +42,6 @@ body {
     transition: background 0.3s ease;
 }
 
-body.light-mode {
-    background: #ffb6c13a; /* fundo branco gelo para modo claro */
-}
-
 /* configuração html */
 html {
     font-size: 62.5%;
@@ -173,8 +169,6 @@ header .navbar a {
     margin: 2rem 0;
     text-decoration: underline;
     text-decoration-color: #810021;
-    /*background: black;
-    background: linear-gradient(to right, transparent, #ff6a00, #ee0979, transparent); */
 }
 
 /* configuração da div content - organização dos outros conteúdos */
@@ -302,7 +296,7 @@ header .navbar a {
     max-width: 900px;
     margin: 50px auto;
     position: relative;
-    background: #fff;
+    background: #4F0016;
     border-radius: 12px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     overflow: visible;
@@ -344,13 +338,15 @@ header .navbar a {
 
 .slide-content h2 {
     margin: 0;
+    padding-bottom: 15px;
     font-size: 32px;
-    color: #333;
+    color: #fff;
 }
 
 .slide-content span {
-    font-size: 18px;
-    color: #666;
+    line-height: 20px;
+    font-size: 16px;
+    color: #fff;
 }
 
 .nav {
@@ -595,3 +591,71 @@ footer > a > img {
 .read-more-btn:hover {
     background-color: #000000bb;
 }
+
+
+body.light-mode {
+    background: #ffb6c179;
+}
+
+body.light-mode .content h3 {
+    color: #d5aeae;
+}
+
+body.light-mode h1 {
+    color: rgba(0, 0, 0, 0.863);
+    text-decoration-color: #d5aeae;
+}
+
+body.light-mode .about .content .text-about h3 {
+    color: rgba(0, 0, 0, 0.863);
+}
+
+
+body.light-mode .about .content .text-about p {
+    color: #333333;
+}
+
+body.light-mode .about .content .gif img {
+    border: 0.5rem solid #333333;
+}
+
+body.light-mode .read-more-btn {
+    background: #d5aeae;
+    color: #333333;
+}
+
+body.light-mode .read-more-btn:hover {
+    background-color: #000000bb;
+    color: #fff;
+}
+
+body.light-mode p {
+    color: #333333;
+}
+
+body.light-mode .carousel-container {
+    background: #d5aeae;
+}
+
+body.light-mode .slide-content h2,
+body.light-mode .slide-content span {
+  color: #333333;
+}
+
+body.light-mode .image-wrapper h3 {
+    color: #333333;
+}
+
+body.light-mode .image-details p {
+    color: #fff;
+    text-decoration: #d5aeae;
+}
+
+body.light-mode .image-details:hover {
+    text-decoration-color: #d5aeae;
+}
+
+body.light-mode .box a {
+    color: #333333b7;
+}
+
