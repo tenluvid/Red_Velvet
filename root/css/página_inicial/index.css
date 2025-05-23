@@ -876,17 +876,5 @@ body.light-mode .box a {
     transform: none;
     justify-content: center;
     margin: 1rem 0;
-
-    /* Afastar dos links: */
-    padding-left: 1rem;  /* para left-buttons */
-    padding-right: 1rem; /* para mode-selector */
-  }
-
-  .left-buttons {
-    padding-left: 2rem; /* aumenta mais o afastamento da esquerda */
-  }
-
-  .mode-selector {
-    padding-right: 2rem; /* aumenta mais o afastamento da direita */
   }
 }
