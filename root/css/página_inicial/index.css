@@ -535,7 +535,7 @@ footer > a > img {
 
 .mode-selector {
     position: absolute;
-    right: 3%;
+    right: 6%;
     top: 50%;
     transform: translateY(-50%);
     display: flex;
@@ -659,3 +659,205 @@ body.light-mode .box a {
     color: #333333b7;
 }
 
+.left-buttons {
+    position: absolute;
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    gap: 10px;
+    background-color: rgba(129, 0, 33, 0.8);
+    padding: 2px 6px;
+    border-radius: 8px;
+    align-items: center;
+}
+
+.left-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    padding: 6px 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.left-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+
+/* Responsividade para telas até 768px */
+@media (max-width: 768px) {
+  
+  /* Remover background da home no mobile */
+  .home, 
+  .home.light-mode {
+    background: none !important;
+    -webkit-mask-image: none !important;
+    mask-image: none !important;
+    min-height: auto;
+    padding: 2rem 4%;
+  }
+
+  /* Ajustar padding das sections para mobile */
+  section {
+    padding: 6rem 4% !important;
+  }
+  
+  /* Ajustar o header para telas pequenas */
+  header {
+    padding: 10px 4%;
+  }
+
+  /* Logo menor */
+  header .logo img {
+    width: 60px;
+    height: 60px;
+  }
+  header .logo img:hover {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Navbar menor e com mais espaçamento vertical */
+  header .navbar a {
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
+  }
+  .navbar > a:hover {
+    padding: 0.5rem 2rem;
+  }
+
+  /* Ajustar título da home */
+  .home .content h3 {
+    font-size: 4rem;
+    margin-top: 50px;
+
+  }
+
+  /* Ajustar texto da home */
+  .home .content p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+  }
+
+  body.light-mode .content p {
+    color: #333333;
+}
+
+  /* CARROSSEL: layout vertical */
+  .carousel {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .slide {
+    min-width: 100% !important;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .slide img {
+    width: 180px !important;
+    height: 180px !important;
+    margin: 0 0 15px 0;
+  }
+
+  .slide-content {
+    align-items: center;
+  }
+
+  .slide-content h2 {
+    font-size: 24px;
+  }
+
+  .slide-content span {
+    font-size: 14px;
+  }
+
+  /* Botões de navegação do carrossel reposicionados */
+  .nav.prev {
+    left: 10px;
+    top: auto;
+    bottom: -50px;
+    transform: none;
+  }
+  .nav.next {
+    right: 10px;
+    top: auto;
+    bottom: -50px;
+    transform: none;
+  }
+
+  /* Ajustar tamanhos de fonte nas sections */
+  .heading, 
+  .box h1, 
+  .image-wrapper h1 {
+    font-size: 2.8rem;
+  }
+
+  .about .content .text-about h3 {
+    font-size: 2rem;
+  }
+
+  .about .content .text-about p,
+  .box p,
+  .image-wrapper p {
+    font-size: 1.2rem;
+  }
+
+  /* Ajustar largura da imagem .gif na about para ficar menor */
+  .about .content .gif img {
+    width: 180px;
+    height: 180px;
+    border-width: 0.3rem;
+  }
+
+  /* Ajustar layout flex-wrap para about content */
+  .about .content {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  /* Ajustar a largura da box p para ocupar a maior parte da tela */
+  .box p {
+    margin-left: 10px;
+    margin-right: 10px;
+    max-width: 95%;
+  }
+
+  /* Conceitos (concepts) layout vertical para mobile */
+  .concept {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .media {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  /* Ajustar textos menores na image-wrapper */
+  .image-wrapper h3 {
+    font-size: 2.4rem;
+  }
+  .image-wrapper p {
+    font-size: 1.1rem;
+  }
+
+  /* Ajustar rodapé */
+  footer > p {
+    font-size: 11px;
+  }
+
+  /* Ajustar os botões de modo e botões à esquerda para telas pequenas */
+  .mode-selector,
+  .left-buttons {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin: 1rem 0;
+  }
+}
