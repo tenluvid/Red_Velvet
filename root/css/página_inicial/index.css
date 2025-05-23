@@ -825,11 +825,16 @@ body.light-mode .box a {
     font-size: 1.2rem;
   }
 
-  /* Ajustar largura da imagem .gif na about para ficar menor */
   .about .content .gif img {
-    width: 180px;
-    height: 180px;
-    border-width: 0.3rem;
+    width: 100%;
+    max-width: 300px; 
+    height: auto;
+    aspect-ratio: 16/9; 
+    object-fit: cover;
+    border-radius: 8px; 
+    margin: 0 auto; 
+    display: block;
+    border: 1px solid #ccc;
   }
 
   /* Ajustar layout flex-wrap para about content */
