@@ -711,6 +711,11 @@ body.light-mode .box a {
     padding: 10px 4%;
   }
 
+  header .logo {
+    display: none;
+  } 
+
+
   /* Logo menor */
   header .logo img {
     width: 60px;
@@ -728,6 +733,18 @@ body.light-mode .box a {
   }
   .navbar > a:hover {
     padding: 0.5rem 2rem;
+  }
+
+  header .navbar {
+    display: flex;
+    justify-content: center;
+    gap: 1.1rem; /* espaço entre os links */
+  }
+
+  /* Opcional: se quiser os links um pouco maiores para mobile */
+  header .navbar a {
+    font-size: 1.6rem;
+    padding: 0.5rem 1rem;
   }
 
   /* Ajustar título da home */
